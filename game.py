@@ -7,6 +7,8 @@ name = raw_input("> ")
 
 play_again = True
 
+best_score = 100
+
 while play_again == True:
     number = randint(1, 100)
 
@@ -23,6 +25,12 @@ while play_again == True:
             if guess == number:
                 print "Congratulations! You guessed the number in %s guesses!" % (num_guesses)
                 guessed = True
+                if num_guesses < best_score:
+                    best_score = num_guesses
+                    print "This is your best score yet!"
+                else:
+                    print "Your best score so far is %s" % (best_score)
+
                 print "Would you like to play again?"
                 play_again = raw_input("Y or N: ")
                 if play_again == "Y":
