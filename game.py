@@ -16,8 +16,10 @@ guessed = False
 
 while guessed == False:
     guess = int(raw_input(">  "))
+    num_guesses += 1
     if guess == number:
-        print "Congratulations!  You guessed the number!"
+        print "Congratulations! You guessed the number in %s guesses!" %(num_guesses)
+        guessed = True
     elif guess < number:
         print "Too Low!"
     elif guess > number:
