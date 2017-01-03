@@ -9,10 +9,18 @@ number = randint(1, 100)
 
 print "%s, I'm thinking of a number between 1 and 100. \nTry to guess my number." % (name)
 
-guess = raw_input("> ")
 
 num_guesses = 0
 
 guessed = False
 
-#while guessed == False:
+while guessed == False:
+    guess = int(raw_input(">  "))
+    if guess == number:
+        print "Congratulations!  You guessed the number!"
+    elif guess < number:
+        print "Too Low!"
+    elif guess > number:
+        print "Too High!"
+    else:
+        print "Sorry, I don't understand that input!"
