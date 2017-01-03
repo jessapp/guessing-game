@@ -14,12 +14,19 @@ num_guesses = 0
 
 guessed = False
 
-while guessed == False:
-    guess = int(raw_input(">  "))
+while not guessed:
+    try:
+        guess = int(raw_input(">  "))
+        break
+    except ValueError:
+        print "That's Not even a number! Try Again!"
+
     num_guesses += 1
     if guess == number:
-        print "Congratulations! You guessed the number in %s guesses!" %(num_guesses)
+        print "Congratulations! You guessed the number in %s guesses!" % (num_guesses)
         guessed = True
+    elif guess < 1 or guess > 100:
+        print "Can't you read?! Guess again, in the range!"
     elif guess < number:
         print "Too Low!"
     elif guess > number:
